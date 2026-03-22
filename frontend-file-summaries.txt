@@ -1,0 +1,17 @@
+{
+  "frontend/src/index.css": "Global styles with warm educational color palette using OKLCH colors (oranges, yellows, greens) and custom font families for readable content and code display.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with educational theme colors, custom fonts (Inter, JetBrains Mono), warm shadow effects, and success/info color tokens.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router configuration for all routes (home, tutorials, practice, and detail pages) wrapped in a Layout component.",
+  "frontend/src/components/Layout.tsx": "Layout component with sticky header navigation, logo, route-aware navigation buttons, main content outlet, and footer with attribution.",
+  "frontend/src/pages/HomePage.tsx": "Homepage with hero section featuring generated assets, platform overview, navigation cards to tutorials and practice sections, progress dashboard, and feature highlights.",
+  "frontend/src/pages/TutorialsPage.tsx": "Tutorials listing page with difficulty filter tabs, tutorial cards showing completion status with checkmarks, and type-safe Links to individual tutorial detail pages using params prop.",
+  "frontend/src/pages/TutorialDetailPage.tsx": "Tutorial detail page displaying lesson content with code examples, difficulty badge, completion status, and button to mark tutorial as complete.",
+  "frontend/src/pages/PracticePage.tsx": "Practice exercises listing page with difficulty filters, exercise cards showing solved status with checkmarks, and type-safe Links to exercise detail pages using params prop.",
+  "frontend/src/pages/ExerciseDetailPage.tsx": "Exercise detail page with split layout showing problem description on left and interactive code editor on right, with run and submit functionality.",
+  "frontend/src/components/CodeEditor.tsx": "Simple code editor component using textarea with monospace font styling for Python code input.",
+  "frontend/src/components/ProgressDashboard.tsx": "Progress dashboard displaying overall progress, completed tutorials, and solved exercises with progress bars and statistics.",
+  "frontend/src/hooks/useTutorials.ts": "React Query hook for fetching tutorials from backend with optional difficulty filtering.",
+  "frontend/src/hooks/useExercises.ts": "React Query hook for fetching exercises from backend with optional difficulty filtering.",
+  "frontend/src/hooks/useUserProgress.ts": "React Query hook for fetching user progress data including completed tutorials and solved exercises, handling cases where user has no progress yet.",
+  "frontend/src/hooks/useQueries.ts": "Custom mutation hooks for completing tutorials and solving exercises with automatic progress data invalidation."
+}

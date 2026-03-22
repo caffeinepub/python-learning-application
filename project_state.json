@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Educational Python learning application with practice exercises",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Friendly Python logo or mascot illustration with educational theme for the homepage hero section (python-hero.dim_800x400.png)\n- Icon representing tutorials or learning with book and code symbols (tutorials-icon.dim_256x256.png)\n- Icon representing practice exercises with code editor and checkmark symbols (practice-icon.dim_256x256.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-homepage-that-welcomes-users-and-provides-an-overview-of-the-python-learning-platform-with-navigation-to-tutorials-and-practice-sections",
+      "title": "Create a homepage that welcomes users and provides an overview of the Python learning platform with navigation to tutorials and practice sections",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-tutorials-section-with-python-programming-lessons-organized-by-difficulty-level-beginner-intermediate-covering-core-concepts-like-variables-data-types-loops-functions-and-basic-data-structures",
+      "title": "Implement a tutorials section with Python programming lessons organized by difficulty level (beginner, intermediate) covering core concepts like variables, data types, loops, functions, and basic data structures",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-practice-exercises-section-where-users-can-write-and-run-python-code-directly-in-the-browser-to-solve-programming-challenges",
+      "title": "Create a practice exercises section where users can write and run Python code directly in the browser to solve programming challenges",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-store-user-progress-on-tutorials-and-practice-exercises-so-they-can-track-which-lessons-they-have-completed-and-which-exercises-they-have-solved",
+      "title": "Store user progress on tutorials and practice exercises so they can track which lessons they have completed and which exercises they have solved",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-creative-educational-visual-design-theme-with-warm-encouraging-colors-and-clear-typography-that-makes-learning-feel-accessible-and-non-intimidating-with-consistent-styling-across-tutorials-and-practice-sections",
+      "title": "Apply a creative, educational visual design theme with warm, encouraging colors and clear typography that makes learning feel accessible and non-intimidating, with consistent styling across tutorials and practice sections",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Python learning tutorials and lessons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Practice exercises for Python programming",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Implement a code execution system that safely runs user-submitted Python code and returns output or error messages",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Python Learning Application",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

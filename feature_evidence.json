@@ -1,0 +1,110 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-homepage-that-welcomes-users-and-provides-an-overview-of-the-python-learning-platform-with-navigation-to-tutorials-and-practice-sections",
+      "featureTitle": "Create a homepage that welcomes users and provides an overview of the Python learning platform with navigation to tutorials and practice sections",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-tutorials-section-with-python-programming-lessons-organized-by-difficulty-level-beginner-intermediate-covering-core-concepts-like-variables-data-types-loops-functions-and-basic-data-structures",
+      "featureTitle": "Implement a tutorials section with Python programming lessons organized by difficulty level (beginner, intermediate) covering core concepts like variables, data types, loops, functions, and basic data structures",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useTutorials.ts",
+        "frontend/src/hooks/useUserProgress.ts",
+        "frontend/src/pages/TutorialDetailPage.tsx",
+        "frontend/src/pages/TutorialsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-practice-exercises-section-where-users-can-write-and-run-python-code-directly-in-the-browser-to-solve-programming-challenges",
+      "featureTitle": "Create a practice exercises section where users can write and run Python code directly in the browser to solve programming challenges",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CodeEditor.tsx",
+        "frontend/src/hooks/useExercises.ts",
+        "frontend/src/pages/ExerciseDetailPage.tsx",
+        "frontend/src/pages/PracticePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-store-user-progress-on-tutorials-and-practice-exercises-so-they-can-track-which-lessons-they-have-completed-and-which-exercises-they-have-solved",
+      "featureTitle": "Store user progress on tutorials and practice exercises so they can track which lessons they have completed and which exercises they have solved",
+      "files": [
+        "frontend/src/components/ProgressDashboard.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/PracticePage.tsx",
+        "frontend/src/pages/TutorialsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-creative-educational-visual-design-theme-with-warm-encouraging-colors-and-clear-typography-that-makes-learning-feel-accessible-and-non-intimidating-with-consistent-styling-across-tutorials-and-practice-sections",
+      "featureTitle": "Apply a creative, educational visual design theme with warm, encouraging colors and clear typography that makes learning feel accessible and non-intimidating, with consistent styling across tutorials and practice sections",
+      "files": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

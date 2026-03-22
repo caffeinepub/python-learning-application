@@ -1,0 +1,165 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Python Learning Hub - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create homepage with platform overview and navigation to tutorials and practice sections",
+      "acceptanceCriteria": [
+        "Homepage displays welcome message explaining the platform purpose",
+        "Navigation clearly shows links to tutorials and practice areas",
+        "Interface is beginner-friendly and intuitive"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create homepage component that displays a welcome section with the generated hero image (frontend/public/assets/generated/python-hero.dim_800x400.png), platform overview explaining Python learning goals, and prominent navigation cards linking to tutorials and practice sections. Include the tutorials icon (frontend/public/assets/generated/tutorials-icon.dim_256x256.png) and practice icon (frontend/public/assets/generated/practice-icon.dim_256x256.png) in the navigation cards. Use shadcn/ui Card components for the navigation sections."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Set up React Router with routes for HomePage (/), TutorialsPage (/tutorials), and PracticePage (/practice). Configure the root route to render HomePage as the default landing page."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a layout component with a navigation header that includes links to Home, Tutorials, and Practice sections. This provides consistent navigation across all pages. Use shadcn/ui Button components for navigation links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement tutorials section with Python lessons organized by difficulty covering core concepts",
+      "acceptanceCriteria": [
+        "Tutorials are organized by difficulty level with clear progression",
+        "Each tutorial includes clear explanations with code examples",
+        "Content covers fundamental Python concepts: variables, data types, control flow, functions, lists, dictionaries",
+        "Explanations use simple, beginner-friendly language"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TutorialsPage.tsx",
+          "operation": "create",
+          "description": "Create tutorials page that fetches tutorials from the backend using getTutorials() method and displays them organized by difficulty level (beginner, intermediate). Include difficulty filter buttons to toggle between levels. Show tutorial cards with title and difficulty badge using shadcn/ui Card and Badge components. Each card links to the individual tutorial detail page."
+        },
+        {
+          "path": "frontend/src/pages/TutorialDetailPage.tsx",
+          "operation": "create",
+          "description": "Create tutorial detail page that displays a single tutorial's content with clear explanations and code examples. Fetch the specific tutorial based on route parameter. Include a 'Mark as Complete' button that calls backend completeTutorial() method. Display code examples using syntax highlighting with a code block component. Show completion status if the user has already completed this tutorial."
+        },
+        {
+          "path": "frontend/src/hooks/useTutorials.ts",
+          "operation": "create",
+          "description": "Create custom React hook that manages fetching tutorials from the backend using getTutorials() method, handles loading states, errors, and provides filtered tutorials by difficulty. Use the backend interface to call the appropriate methods."
+        },
+        {
+          "path": "frontend/src/hooks/useUserProgress.ts",
+          "operation": "create",
+          "description": "Create custom React hook that fetches and manages user progress data using getUserProgress() backend method. Provides completed tutorial IDs and solved exercise IDs to components. Handles authentication state and refetches progress after completion actions."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for TutorialsPage at /tutorials and TutorialDetailPage at /tutorials/:id. Wire these routes into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create practice exercises section with in-browser code editor for solving programming challenges",
+      "acceptanceCriteria": [
+        "Users can type Python code in an interactive code editor",
+        "Code can be executed and results displayed immediately",
+        "Practice exercises include problem descriptions and expected outputs",
+        "Exercises are categorized by topic and difficulty"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/PracticePage.tsx",
+          "operation": "create",
+          "description": "Create practice page that fetches exercises from backend using getExercises() method and displays them organized by difficulty. Include difficulty filter to show beginner or intermediate exercises. Display exercise cards showing title, difficulty, and description using shadcn/ui Card components. Each card links to the exercise detail page where users can code solutions."
+        },
+        {
+          "path": "frontend/src/pages/ExerciseDetailPage.tsx",
+          "operation": "create",
+          "description": "Create exercise detail page with split layout: left side shows problem description and expected output, right side contains an interactive code editor (textarea with monospace font and syntax styling) where users can write Python code. Include 'Run Code' button that submits code for validation. Display execution results or error messages below the editor. Show 'Submit Solution' button that calls backend solveExercise() method when code is correct. Display completion status if user has already solved this exercise."
+        },
+        {
+          "path": "frontend/src/hooks/useExercises.ts",
+          "operation": "create",
+          "description": "Create custom React hook that manages fetching exercises from backend using getExercises() method, handles loading and error states, and provides filtered exercises by difficulty."
+        },
+        {
+          "path": "frontend/src/components/CodeEditor.tsx",
+          "operation": "create",
+          "description": "Create a code editor component using a textarea with monospace font, line numbers (optional), and basic syntax highlighting styling. Include props for value, onChange, and placeholder. This component will be used in the exercise detail page for code input."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for PracticePage at /practice and ExerciseDetailPage at /practice/:id. Wire these routes into the React Router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Display user progress tracking for completed tutorials and solved exercises",
+      "acceptanceCriteria": [
+        "Users can see which tutorials they have completed",
+        "Users can see which practice problems they have solved",
+        "Progress is maintained across sessions"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProgressDashboard.tsx",
+          "operation": "create",
+          "description": "Create a progress dashboard component that displays user completion statistics using data from useUserProgress hook. Show number of completed tutorials and solved exercises with visual progress indicators using shadcn/ui Progress components. Include lists of completed items with checkmarks."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add ProgressDashboard component to the homepage to show user's learning progress overview. Position it below the hero section and navigation cards."
+        },
+        {
+          "path": "frontend/src/pages/TutorialsPage.tsx",
+          "operation": "modify",
+          "description": "Use useUserProgress hook to mark completed tutorials with visual indicators (checkmarks or badges) on tutorial cards. Show completion status clearly so users can track their progress."
+        },
+        {
+          "path": "frontend/src/pages/PracticePage.tsx",
+          "operation": "modify",
+          "description": "Use useUserProgress hook to mark solved exercises with visual indicators (checkmarks or badges) on exercise cards. Show completion status so users can identify which problems they've already solved."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply educational visual design theme with warm colors and clear typography",
+      "acceptanceCriteria": [
+        "Visual theme uses warm, welcoming colors that encourage learning",
+        "Typography is clear and highly readable for educational content",
+        "Design creates an approachable, beginner-friendly atmosphere",
+        "Styling is consistent across all sections of the platform"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define custom CSS variables for educational theme colors including warm primary colors (oranges, yellows), encouraging accent colors (greens for success, blues for info), and neutral backgrounds. Set up clear, readable typography with appropriate font families, sizes, and line heights for educational content. Ensure high contrast for accessibility."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind configuration with custom color palette for the educational theme using warm, welcoming colors. Define custom font families optimized for code display and educational content readability. Configure spacing and border radius values that create a friendly, approachable design."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Apply consistent header styling with the educational theme colors. Use warm background colors and ensure navigation elements are clearly visible and accessible. Apply the custom typography settings to all text elements."
+        }
+      ]
+    }
+  ]
+}

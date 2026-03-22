@@ -1,0 +1,17 @@
+import { useQuery } from '@tanstack/react-query';
+import { useActor } from './useActor';
+import type { Exercise } from '../backend';
+
+export function useExercises(difficulty: string | null) {
+  const { actor, isFetching } = useActor();
+
+  return useQuery<Exercise[]>({
+    queryKey: ['exercises', difficulty],
+    queryFn: async () => {
+      if (!actor) return [];
+      return actor.getExercises(difficulty);
+    },
+    enabled: !!actor && !isFetching,
+  });
+}
+

@@ -1,0 +1,127 @@
+{
+  "kind": "build_request",
+  "title": "Create Python learning platform with tutorials and practice exercises",
+  "projectName": "Python Learning Hub",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a homepage that welcomes users and provides an overview of the Python learning platform with navigation to tutorials and practice sections",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage displays welcome message explaining the platform purpose",
+        "Navigation clearly shows links to tutorials and practice areas",
+        "Interface is beginner-friendly and intuitive"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a tutorials section with Python programming lessons organized by difficulty level (beginner, intermediate) covering core concepts like variables, data types, loops, functions, and basic data structures",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "learn about python programming in very easy way"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Tutorials are organized by difficulty level with clear progression",
+        "Each tutorial includes clear explanations with code examples",
+        "Content covers fundamental Python concepts: variables, data types, control flow, functions, lists, dictionaries",
+        "Explanations use simple, beginner-friendly language"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a practice exercises section where users can write and run Python code directly in the browser to solve programming challenges",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "performed prectice"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can type Python code in an interactive code editor",
+        "Code can be executed and results displayed immediately",
+        "Practice exercises include problem descriptions and expected outputs",
+        "Exercises are categorized by topic and difficulty"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Store user progress on tutorials and practice exercises so they can track which lessons they have completed and which exercises they have solved",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend persists user progress for tutorials and exercises",
+        "Users can see which tutorials they have completed",
+        "Users can see which practice problems they have solved",
+        "Progress is maintained across sessions"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a code execution system that safely runs user-submitted Python code and returns output or error messages",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend can evaluate Python code syntax and logic",
+        "System returns execution results or error messages to the user",
+        "Code validation provides helpful feedback for common mistakes"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a creative, educational visual design theme with warm, encouraging colors and clear typography that makes learning feel accessible and non-intimidating, with consistent styling across tutorials and practice sections",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visual theme uses warm, welcoming colors that encourage learning",
+        "Typography is clear and highly readable for educational content",
+        "Design creates an approachable, beginner-friendly atmosphere",
+        "Styling is consistent across all sections of the platform"
+      ]
+    }
+  ],
+  "constraints": [
+    "Python code execution must be simulated through Motoko logic as actual Python runtime is not available on the Internet Computer",
+    "Code execution should validate syntax and provide educational feedback rather than full Python interpretation"
+  ],
+  "nonGoals": [
+    "Full Python interpreter implementation",
+    "Advanced Python topics like async/await, decorators, or metaclasses",
+    "Integration with external Python execution services",
+    "Video tutorials or multimedia content",
+    "Community features like forums or user-to-user messaging"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Friendly Python logo or mascot illustration with educational theme for the homepage hero section (python-hero.dim_800x400.png)",
+      "Icon representing tutorials or learning with book and code symbols (tutorials-icon.dim_256x256.png)",
+      "Icon representing practice exercises with code editor and checkmark symbols (practice-icon.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}
